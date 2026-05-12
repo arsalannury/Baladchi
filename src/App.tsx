@@ -1,12 +1,16 @@
-import { useState } from "react";
+// import { startTransition, useActionState } from "react";
+import { Routes, Route ,BrowserRouter} from "react-router";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <p>Hello Again New React Js !</p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home />}></Route>
+        <Route path="login" element={<Login />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
