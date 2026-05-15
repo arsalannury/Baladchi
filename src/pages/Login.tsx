@@ -8,7 +8,7 @@ const Login = () => {
         <div className="p-5 max-md:col-span-12">
           <div className="flex flex-col items-center justify-center h-full gap-5">
             <p className="font-bold text-3xl mb-5">
-              به <span className="text-amber-500">پینه</span> خوش اومدی
+              به <span className="text-sky-600">پینه</span> خوش اومدی
             </p>
             <input
               type="text"
@@ -22,13 +22,13 @@ const Login = () => {
             />
             <button
               onClick={() => {}}
-              className="bg-amber-500 text-white px-10 py-3 rounded-lg cursor-pointer max-lg:w-full w-[50%] "
+              className="bg-sky-600 text-white px-10 py-3 rounded-lg cursor-pointer max-lg:w-full w-[50%] "
             >
               ورود
             </button>
           </div>
         </div>
-        <div className="bg-amber-500 rounded-lg p-5 m-10 max-md:hidden"></div>
+        <div className="bg-sky-600 rounded-lg p-5 m-10 max-md:hidden"></div>
       </div>
     </>
   );
