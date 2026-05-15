@@ -1,4 +1,4 @@
-const Banner = () => {
+const Banner: React.FC = () => {
   return (
     <>
       <div className="bg-sky-600 w-full h-150" id="banner-clip-path">
@@ -9,7 +9,7 @@ const Banner = () => {
           <p className="text-4xl text-white font-[VazirBold]">
             میتونی حضوری یا تلفنی از بقیه کمک بگیری
           </p>
-          <p className="text-4xl text-white font-[VazirBold]">
+          <p className="text-4xl text-white font-[VazirBold] mt-5">
             چی از این بهتر؟
           </p>
         </div>
