@@ -1,7 +1,7 @@
 import { BiPhoneCall } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <>
       <header className="h-8.75 p-10 flex items-center justify-between bg-sky-600">
@@ -10,7 +10,7 @@ const Header = () => {
           1190
         </p>
         <div className="flex items-center gap-3">
-          <span className="text-2xl text-white font-[VazirBold]">پینه</span>
+          <span className="text-2xl text-white font-[VazirBold]">کمک</span>
           <GiHamburgerMenu className="text-white" size={22} />
         </div>
       </header>
