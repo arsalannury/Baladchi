@@ -1,15 +1,9 @@
-import { Routes, Route ,BrowserRouter} from "react-router";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import { RouterProvider} from "react-router";
+import routes from "./routes";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />}></Route>
-        <Route path="login" element={<Login />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={routes} />
   );
 }
 
