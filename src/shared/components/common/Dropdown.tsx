@@ -3,8 +3,10 @@ import {
   use,
   useEffect,
   useState,
+  useRef,
   type ReactElement,
   type ReactNode,
+  type Ref,
 } from "react";
 import { type LucideProps } from "lucide-react";
 import Button from "./Button";
@@ -19,39 +21,68 @@ interface ITriggerProps {
   children?: ReactNode;
 }
 
-type IContentProps = {
+type IBodyProps = {
   showClose?: boolean;
-} & ChildrenType;
+} & Partial<ChildrenType>;
 
 interface IContext {
   isOpen: boolean;
   setIsOpen: (state: boolean) => void;
+  triggerRef: null | Ref<HTMLDivElement>;
 }
 
 // Create context - - - - - - - - - - - - - - - - - - -
 const DropdownContext = createContext<IContext>({
   isOpen: false,
   setIsOpen: function () {},
+  triggerRef: null,
 });
 
 // Add child components - - - - - - - - - - - - - - - - - - -
 const DropdownStorage = ({ children }: ChildrenType) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  // const uniqueId = Math.floor(Math.random() * 1234) + "-" + Date.now();
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOnDocument = (event: PointerEvent) => {
+    const closestTrigger = (event.target as HTMLInputElement).closest(
+      ".dropdown-trigger",
+    );
+    
+    if (!closestTrigger) {
+       document.body.style.overflow = "";
+    }
+
+    if (triggerRef.current !== closestTrigger) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    // Close all dropdowns expect current
+    document.addEventListener("click", handleClickOnDocument);
+    return () => document.removeEventListener("click", handleClickOnDocument);
+  }, []);
+
   return (
-    <DropdownContext.Provider value={{ isOpen, setIsOpen }}>
+    <DropdownContext.Provider value={{ isOpen, setIsOpen, triggerRef }}>
       {children}
     </DropdownContext.Provider>
   );
 };
 
 const Trigger = ({ children, icon }: ITriggerProps) => {
-  const { isOpen, setIsOpen } = use(DropdownContext);
+  const { isOpen, setIsOpen, triggerRef } = use(DropdownContext);
 
   return (
     <div
-      className="p-2 text-slate-700 hover:bg-slate-100 rounded-lg relative"
-      onClick={() => setIsOpen(!isOpen)}
+      ref={triggerRef}
+      className="p-2 text-slate-700 hover:bg-slate-100 rounded-lg relative dropdown-trigger"
+      onClick={() => {
+        if (!isOpen) {
+          document.body.style.overflow = "hidden";
+        }
+        setIsOpen(!isOpen);
+      }}
     >
       {icon ?? null}
       {children}
@@ -69,7 +100,7 @@ const Item = ({ children }: ChildrenType) => {
   );
 };
 
-const Content = ({ children, showClose }: IContentProps) => {
+const Body = ({ children, showClose }: IBodyProps) => {
   const { isOpen, setIsOpen } = use(DropdownContext);
 
   if (!isOpen) return null;
@@ -77,7 +108,7 @@ const Content = ({ children, showClose }: IContentProps) => {
   return (
     <div
       className={`absolute top-11 right-0 bg-white border border-slate-200
-                  p-2 items-start justify-start flex-col dropdown-trigger
+                  p-2 items-start justify-start flex-col dropdown-body
                   w-50 h-56 rounded-lg ${isOpen ? "flex" : "hidden"}`}
     >
       {children}
@@ -90,17 +121,11 @@ const Content = ({ children, showClose }: IContentProps) => {
 
 // Add main component - - - - - - - - - - - - - - - - - - -
 const Dropdown = ({ children }: ChildrenType) => {
-  useEffect(() => {
-    document.addEventListener("click", (event) => {
-      console.log(event.target);
-    });
-  }, []);
-
   return <DropdownStorage>{children}</DropdownStorage>;
 };
 
 Dropdown.Trigger = Trigger;
-Dropdown.Content = Content;
+Dropdown.Body = Body;
 Dropdown.Item = Item;
 
 export default Dropdown;

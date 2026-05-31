@@ -65,15 +65,13 @@ const Header: React.FC = () => {
               <Dropdown>
                 <Dropdown.Trigger icon={<Bell className="w-5 h-5" />}>
                   <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-                  <Dropdown.Content>
-                   
-                  </Dropdown.Content>
+                  <Dropdown.Body />
                 </Dropdown.Trigger>
               </Dropdown>
 
               <Dropdown>
                 <Dropdown.Trigger icon={<User className="w-5 h-5" />}>
-                  <Dropdown.Content>
+                  <Dropdown.Body>
                     <Dropdown.Item>
                       <UserRoundPen size={19} />
                       <span className="text-sm">مشاهده پروفایل</span>
@@ -82,7 +80,7 @@ const Header: React.FC = () => {
                       <LogOut size={19} />
                       <span className="text-sm">خروج از حساب</span>
                     </Dropdown.Item>
-                  </Dropdown.Content>
+                  </Dropdown.Body>
                 </Dropdown.Trigger>
               </Dropdown>
 
