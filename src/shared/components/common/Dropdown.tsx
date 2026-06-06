@@ -23,6 +23,7 @@ interface ITriggerProps {
 
 type IBodyProps = {
   showClose?: boolean;
+  width?: string;
 } & Partial<ChildrenType>;
 
 interface IContext {
@@ -47,9 +48,9 @@ const DropdownStorage = ({ children }: ChildrenType) => {
     const closestTrigger = (event.target as HTMLInputElement).closest(
       ".dropdown-trigger",
     );
-    
+
     if (!closestTrigger) {
-       document.body.style.overflow = "";
+      document.body.style.overflow = "";
     }
 
     if (triggerRef.current !== closestTrigger) {
@@ -100,7 +101,7 @@ const Item = ({ children }: ChildrenType) => {
   );
 };
 
-const Body = ({ children, showClose }: IBodyProps) => {
+const Body = ({ children, showClose, width = "52" }: IBodyProps) => {
   const { isOpen, setIsOpen } = use(DropdownContext);
 
   if (!isOpen) return null;
@@ -109,7 +110,7 @@ const Body = ({ children, showClose }: IBodyProps) => {
     <div
       className={`absolute top-11 right-0 bg-white border border-slate-200
                   p-2 items-start justify-start flex-col dropdown-body
-                  w-50 h-56 rounded-lg ${isOpen ? "flex" : "hidden"}`}
+                  w-${width} h-56 rounded-lg ${isOpen ? "flex" : "hidden"}`}
     >
       {children}
       {showClose ? (
