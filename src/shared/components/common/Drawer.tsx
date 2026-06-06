@@ -51,10 +51,12 @@ const Body = ({ children }: ChildrenType) => {
         open
         className={`w-full h-screen fixed top-0 bottom-0 right-0 
                 left-0 bg-[rgba(0,0,0,0.1)] transition-all duration-300 z-100
-                ${isOpen ? "translate-x-0" : "translate-x-175"} 
-                ${isOpen ? "opacity-100" : "opacity-0"}`}
+               ${isOpen ? "translate-x-0" : "translate-x-175"}`}
       >
-        <div className={`h-screen w-80 bg-white border-l border-l-slate-200`}>
+        
+        <div
+          className={`h-screen w-80 bg-white border-l border-l-slate-200`}
+        >
           <div className="flex items-center justify-end p-2">
             <PanelRightClose
               onClick={() => setIsOpen(false)}
@@ -78,7 +80,7 @@ const Item = ({ children }: ChildrenType) => {
   );
 };
 
-const Trigger = ({  icon }: ITriggerProps) => {
+const Trigger = ({ icon }: ITriggerProps) => {
   const { setIsOpen } = use(DrawerContext);
 
   return (
@@ -87,7 +89,6 @@ const Trigger = ({  icon }: ITriggerProps) => {
       className="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg"
     >
       {icon ?? null}
-      
     </button>
   );
 };

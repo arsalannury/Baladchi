@@ -97,11 +97,11 @@ const Header: React.FC = () => {
 
             <Drawer>
               <Drawer.Trigger icon={<Menu className="w-6 h-6" />} />
-                <Drawer.Body>
-                  <Drawer.Item>
-                    <p>hello</p>
-                  </Drawer.Item>
-                </Drawer.Body>
+              <Drawer.Body>
+                <Drawer.Item>
+                  <p>hello</p>
+                </Drawer.Item>
+              </Drawer.Body>
             </Drawer>
           </div>
 
@@ -118,55 +118,6 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {/* {mobileMenuOpen && ( */}
-
-        {/* <div className="md:hidden border-t border-slate-200 bg-white">
-              <nav className="px-4 py-3 space-y-2">
-                <Link
-                  to="/"
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg ${
-                    isActive("/")
-                      ? "text-purple-600 bg-purple-50"
-                      : "text-slate-700"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <TrendingUp className="w-5 h-5" />
-                  <span className="font-medium">خانه</span>
-                </Link>
-                <Link
-                  to="/topic/technology"
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg ${
-                    location.pathname.startsWith("/topic")
-                      ? "text-purple-600 bg-purple-50"
-                      : "text-slate-700"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Award className="w-5 h-5" />
-                  <span className="font-medium">موضوعات</span>
-                </Link>
-                <Link
-                  to="/"
-                  className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <User className="w-5 h-5" />
-                  <span className="font-medium">پروفایل</span>
-                </Link>
-                <Link
-                  to="/ask"
-                  className="flex items-center gap-3 px-3 py-2 bg-linear-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Plus className="w-5 h-5" />
-                  <span>پرسش جدید</span>
-                </Link>
-              </nav>
-            </div> */}
-        {/* )} */}
       </header>
     </>
   );
