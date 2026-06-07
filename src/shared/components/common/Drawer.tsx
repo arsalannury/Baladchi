@@ -38,34 +38,34 @@ const DrawerStorage = ({ children }: ChildrenType) => {
   );
 };
 
-const Header = ({ children }: ChildrenType) => {};
+const Header = ({ children }: ChildrenType) => {
+  return <>{children}</>;
+};
 
 const Body = ({ children }: ChildrenType) => {
   const { isOpen, setIsOpen } = use(DrawerContext);
 
   return (
     <>
-      <dialog
-        autoFocus
-        role="dialog"
-        open
+      <div
         className={`w-full h-screen fixed top-0 bottom-0 right-0 
-                left-0 bg-[rgba(0,0,0,0.1)] transition-all duration-300 z-100
-               ${isOpen ? "translate-x-0" : "translate-x-175"}`}
+                left-0 bg-[rgba(0,0,0,0.1)] z-100 ${isOpen ? "unset" : "hidden"}`}
+      />
+
+      <div
+        className={`h-screen w-80 bg-white border-l border-l-slate-200
+                      fixed top-0 bottom-0 right-0 
+                  transition-all duration-300 z-100
+                      ${isOpen ? "translate-x-0" : "translate-x-175"}`}
       >
-        
-        <div
-          className={`h-screen w-80 bg-white border-l border-l-slate-200`}
-        >
-          <div className="flex items-center justify-end p-2">
-            <PanelRightClose
-              onClick={() => setIsOpen(false)}
-              className="w-10 h-10 p-2 cursor-pointer text-slate-700 hover:bg-slate-100 rounded-lg left-2 top-2"
-            />
-          </div>
-          {children}
+        <div className="flex items-center justify-end p-2">
+          <PanelRightClose
+            onClick={() => setIsOpen(false)}
+            className="w-10 h-10 p-2 cursor-pointer text-slate-700 hover:bg-slate-100 rounded-lg left-2 top-2"
+          />
         </div>
-      </dialog>
+        {children}
+      </div>
     </>
   );
 };
@@ -73,7 +73,11 @@ const Body = ({ children }: ChildrenType) => {
 const Item = ({ children }: ChildrenType) => {
   return (
     <>
-      <div className="dropdown-item w-full transition-all px-2 py-3 flex items-center justify-around cursor-pointer hover:text-purple-600 hover:bg-purple-50">
+      <div
+        className="dropdown-item w-full transition-all px-2 py-3 
+                      flex items-center justify-around cursor-pointer
+                       hover:text-purple-600 hover:bg-purple-50"
+      >
         {children}
       </div>
     </>
