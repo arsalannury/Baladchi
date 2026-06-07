@@ -1,5 +1,4 @@
-import { Link, useLocation } from "react-router";
-import { useState } from "react";
+import { Link } from "react-router";
 import {
   Search,
   Bell,
@@ -10,15 +9,12 @@ import {
   Plus,
   UserRoundPen,
   LogOut,
+  TrendingUp,
 } from "lucide-react";
 import Dropdown from "../common/Dropdown";
 import Drawer from "../common/Drawer";
 
 const Header: React.FC = () => {
-  const location = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
@@ -99,7 +95,40 @@ const Header: React.FC = () => {
               <Drawer.Trigger icon={<Menu className="w-6 h-6" />} />
               <Drawer.Body>
                 <Drawer.Item>
-                  <p>hello</p>
+                  <Link
+                    to="/"
+                    className={`flex items-center gap-3 `}
+                  >
+                    <TrendingUp className="w-5 h-5" />
+                    <span className="font-medium">خانه</span>
+                  </Link>
+                </Drawer.Item>
+                <Drawer.Item>
+                  <Link
+                    to="/topic/technology"
+                    className={`flex items-center gap-3`}
+                  >
+                    <Award className="w-5 h-5" />
+                    <span className="font-medium">موضوعات</span>
+                  </Link>
+                </Drawer.Item>
+                <Drawer.Item>
+                  <Link
+                    to="/"
+                    className="flex items-center gap-3 "
+                  >
+                    <User className="w-5 h-5" />
+                    <span className="font-medium">پروفایل</span>
+                  </Link>
+                </Drawer.Item>
+                <Drawer.Item>
+                  <Link
+                    to="/ask"
+                    className="flex items-center gap-3"
+                  >
+                    <Plus className="w-5 h-5" />
+                    <span>پرسش جدید</span>
+                  </Link>
                 </Drawer.Item>
               </Drawer.Body>
             </Drawer>
