@@ -23,7 +23,7 @@ interface ITriggerProps {
 
 type IBodyProps = {
   showClose?: boolean;
-  width?: string;
+  // width?: string;
 } & Partial<ChildrenType>;
 
 interface IContext {
@@ -101,7 +101,7 @@ const Item = ({ children }: ChildrenType) => {
   );
 };
 
-const Body = ({ children, showClose, width = "52" }: IBodyProps) => {
+const Body = ({ children, showClose }: IBodyProps) => {
   const { isOpen, setIsOpen } = use(DropdownContext);
 
   if (!isOpen) return null;
@@ -110,7 +110,7 @@ const Body = ({ children, showClose, width = "52" }: IBodyProps) => {
     <div
       className={`absolute top-11 right-0 bg-white border border-slate-200
                   p-2 items-start justify-start flex-col dropdown-body
-                  w-${width} h-56 rounded-lg ${isOpen ? "flex" : "hidden"}`}
+                  w-52 h-56 rounded-lg ${isOpen ? "flex" : "hidden"}`}
     >
       {children}
       {showClose ? (
