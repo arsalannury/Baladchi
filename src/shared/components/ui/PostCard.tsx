@@ -114,7 +114,7 @@ const PostCard = ({ question }: { question: Question }) => {
                 to={`/user/${question.author.username}`}
                 className="flex items-center gap-2 group"
               >
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                <div className="w-8 h-8 bg-linear-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
                   {question.author.avatar}
                 </div>
                 <div className="flex flex-col">
