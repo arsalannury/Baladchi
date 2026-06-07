@@ -34,7 +34,7 @@ const Tab = ({ tabId, onClick, isActive, title, icon }: IProps) => {
           onClick={onClick}
           className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-colors ${
             isActive
-              ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-sm"
+              ? "bg-linear-to-r from-purple-600 to-blue-600 text-white shadow-sm"
               : "text-slate-600 hover:bg-slate-50"
           }`}
         >
