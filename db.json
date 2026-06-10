@@ -1,7 +1,140 @@
 {
-  "dayliFoods": [
-    { "name": "خورشت قیمه", "kalori": "450", "price": "350" },
-    { "name": "خورشت قرمه سبزی", "kalori": "400", "price": "410" },
-    { "name": "ماکارونی", "kalori": "390", "price": "325" }
+  "trendingTopics": [
+    {
+      "name": "هوش مصنوعی",
+      "count": 1234,
+      "color": "bg-purple-100 text-purple-700"
+    },
+    {
+      "name": "برنامه‌نویسی",
+      "count": 2341,
+      "color": "bg-blue-100 text-blue-700"
+    },
+    {
+      "name": "استارتاپ",
+      "count": 876,
+      "color": "bg-green-100 text-green-700"
+    },
+    {
+      "name": "زندگی",
+      "count": 1234,
+      "color": "bg-orange-100 text-orange-700"
+    },
+    {
+      "name": "علم",
+      "count": 654,
+      "color": "bg-pink-100 text-pink-700"
+    }
+  ],
+
+  "questions": [
+    {
+      "id": "1",
+      "title": "بهترین روش یادگیری برنامه‌نویسی برای مبتدی‌ها چیست؟",
+      "content": "من تازه می‌خواهم برنامه‌نویسی را شروع کنم و نمی‌دانم از کجا شروع کنم. آیا باید با پایتون شروع کنم یا جاوااسکریپت؟",
+      "author": {
+        "username": "sara_mohammadi",
+        "name": "سارا محمدی",
+        "avatar": "SM",
+        "reputation": 2547,
+        "badge": "expert"
+      },
+      "topics": ["برنامه‌نویسی", "آموزش", "توسعه‌دهندگان"],
+      "votes": 124,
+      "answers": 18,
+      "views": 3421,
+      "timestamp": "۲ ساعت پیش",
+      "trending": true
+    },
+    {
+      "id": "2",
+      "title": "چطور می‌توانم انگیزه خود را برای ادامه کار حفظ کنم؟",
+      "content": "همیشه با انگیزه شروع می‌کنم اما بعد از چند هفته انگیزه‌ام را از دست می‌دهم. چه کاری می‌توانم انجام دهم؟",
+      "author": {
+        "username": "ali_rezaei",
+        "name": "علی رضایی",
+        "avatar": "AR",
+        "reputation": 8932,
+        "badge": "master"
+      },
+      "topics": ["زندگی", "روانشناسی", "بهره‌وری"],
+      "votes": 89,
+      "answers": 12,
+      "views": 2156,
+      "timestamp": "۵ ساعت پیش"
+    },
+    {
+      "id": "3",
+      "title": "تفاوت هوش مصنوعی و یادگیری ماشین چیست؟",
+      "content": "می‌خواهم در حوزه هوش مصنوعی کار کنم اما مفاهیم پایه را متوجه نمی‌شوم. لطفاً به زبان ساده توضیح دهید.",
+      "author": {
+        "username": "maryam_karimi",
+        "name": "مریم کریمی",
+        "avatar": "MK",
+        "reputation": 1823,
+        "badge": "contributor"
+      },
+      "topics": ["هوش مصنوعی", "فناوری", "علم داده"],
+      "votes": 156,
+      "answers": 24,
+      "views": 5678,
+      "timestamp": "۱ روز پیش",
+      "trending": true
+    },
+    {
+      "id": "4",
+      "title": "چگونه یک استارتاپ موفق راه‌اندازی کنیم؟",
+      "content": "یک ایده دارم اما نمی‌دانم از کجا شروع کنم. آیا اول باید محصول بسازم یا سرمایه‌گذار پیدا کنم؟",
+      "author": {
+        "username": "reza_ahmadi",
+        "name": "رضا احمدی",
+        "avatar": "RA",
+        "reputation": 5421,
+        "badge": "expert"
+      },
+      "topics": ["کسب‌وکار", "استارتاپ", "کارآفرینی"],
+      "votes": 67,
+      "answers": 9,
+      "views": 1834,
+      "timestamp": "۳ ساعت پیش"
+    },
+    {
+      "id": "5",
+      "title": "بهترین کتاب‌های توسعه فردی که خوانده‌اید؟",
+      "content": "به دنبال کتاب‌هایی هستم که واقعاً تاثیرگذار باشند و زندگی را تغییر دهند. پیشنهادات شما چیست؟",
+      "author": {
+        "username": "fateme_hosseini",
+        "name": "فاطمه حسینی",
+        "avatar": "FH",
+        "reputation": 3245,
+        "badge": "expert"
+      },
+      "topics": ["کتاب", "توسعه فردی", "یادگیری"],
+      "votes": 43,
+      "answers": 15,
+      "views": 987,
+      "timestamp": "۶ ساعت پیش"
+    }
+  ],
+
+  "bestContributors": [
+    {
+      "name": "علی رضایی",
+      "username": "ali_rezaei",
+      "reputation": 8932,
+      "avatar": "AR"
+    },
+    {
+      "name": "فاطمه حسینی",
+      "username": "fateme_hosseini",
+      "reputation": 5421,
+      "avatar": "FH"
+    },
+    {
+      "name": "سارا محمدی",
+      "username": "sara_mohammadi",
+      "reputation": 3245,
+      "avatar": "SM"
+    }
   ]
 }
