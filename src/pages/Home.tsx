@@ -5,6 +5,7 @@ import Tab from "../shared/components/common/Tab";
 import { useState } from "react";
 import TrendingTopics from "../shared/components/ui/TrendingTopics";
 import BestContributers from "../shared/components/ui/BestContributers";
+import { useTrendingTopics } from "../services/analysis/queries";
 
 interface Question {
   id: string;
@@ -120,18 +121,11 @@ const mockQuestions: Question[] = [
   },
 ];
 
-const trendingTopics = [
-  { name: "هوش مصنوعی", count: 1234, color: "bg-purple-100 text-purple-700" },
-  { name: "برنامه‌نویسی", count: 2341, color: "bg-blue-100 text-blue-700" },
-  { name: "استارتاپ", count: 876, color: "bg-green-100 text-green-700" },
-  { name: "زندگی", count: 1567, color: "bg-orange-100 text-orange-700" },
-  { name: "علم", count: 654, color: "bg-pink-100 text-pink-700" },
-];
-
 function Home() {
   const [activeTab, setActiveTab] = useState<"trending" | "recent" | "top">(
     "trending",
   );
+  const { data, error, isLoading } = useTrendingTopics();
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -172,23 +166,27 @@ function Home() {
       {/* Sidebar */}
       <div className="lg:col-span-4 space-y-4">
         {/* Trending Topics */}
-        <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <TrendingUp className="w-5 h-5 text-purple-600" />
-            موضوعات پرطرفدار
-          </h3>
-          <div className="space-y-3">
-            {trendingTopics.map((topic, index) => (
-              <TrendingTopics
-                key={topic.name}
-                color={topic.color}
-                name={topic.name}
-                count={topic.count}
-                index={index}
-              />
-            ))}
+        {isLoading ? (
+          "Loading..."
+        ) : (
+          <div className="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-purple-600" />
+              موضوعات پرطرفدار
+            </h3>
+            <div className="space-y-3">
+              {data?.map((topic, index: number) => (
+                <TrendingTopics
+                  key={topic.name}
+                  color={topic.color}
+                  name={topic.name}
+                  count={topic.count}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Top Contributors */}
         <div className="bg-linear-to-br from-purple-50 to-blue-50 rounded-xl border border-purple-200 p-5">
