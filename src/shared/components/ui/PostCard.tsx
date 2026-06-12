@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
-import { getBadgeColor } from "../../../utils";
+import { getBadgeColor } from "../../../lib/utils";
 
 interface Question {
   id: string;
