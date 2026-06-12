@@ -6,7 +6,6 @@ import { useState } from "react";
 import TrendingTopics from "../shared/components/ui/TrendingTopics";
 import BestContributers from "../shared/components/ui/BestContributers";
 import { useTrendingTopics } from "../services/analysis/queries";
-import Spinner from "../shared/components/ui/Spinner";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 
 interface Question {
