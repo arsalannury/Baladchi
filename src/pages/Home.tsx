@@ -6,6 +6,7 @@ import { useState } from "react";
 import TrendingTopics from "../shared/components/ui/TrendingTopics";
 import BestContributers from "../shared/components/ui/BestContributers";
 import { useTrendingTopics } from "../services/analysis/queries";
+import Spinner from "../shared/components/ui/Spinner";
 
 interface Question {
   id: string;
@@ -166,27 +167,30 @@ function Home() {
       {/* Sidebar */}
       <div className="lg:col-span-4 space-y-4">
         {/* Trending Topics */}
-        {isLoading ? (
-          "Loading..."
-        ) : (
-          <div className="bg-white rounded-xl border border-slate-200 p-5">
-            <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-purple-600" />
-              موضوعات پرطرفدار
-            </h3>
-            <div className="space-y-3">
-              {data?.map((topic, index: number) => (
-                <TrendingTopics
-                  key={topic.name}
-                  color={topic.color}
-                  name={topic.name}
-                  count={topic.count}
-                  index={index}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+
+        <div className="bg-white rounded-xl border border-slate-200 p-5">
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <>
+              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-purple-600" />
+                موضوعات پرطرفدار
+              </h3>
+              <div className="space-y-3">
+                {data?.map((topic, index: number) => (
+                  <TrendingTopics
+                    key={topic.name}
+                    color={topic.color}
+                    name={topic.name}
+                    count={topic.count}
+                    index={index}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
 
         {/* Top Contributors */}
         <div className="bg-linear-to-br from-purple-50 to-blue-50 rounded-xl border border-purple-200 p-5">
