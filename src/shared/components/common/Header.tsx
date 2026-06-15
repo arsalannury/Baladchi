@@ -11,8 +11,8 @@ import {
   LogOut,
   TrendingUp,
 } from "lucide-react";
-import Dropdown from "../common/Dropdown";
-import Drawer from "../common/Drawer";
+import Dropdown from "../ui/Dropdown";
+import Drawer from "../ui/Drawer";
 
 const Header: React.FC = () => {
 
