@@ -1,4 +1,4 @@
-import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { getTrendingTopics } from "./fetcher";
 
 export const useTrendingTopics = () =>

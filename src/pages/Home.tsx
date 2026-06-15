@@ -5,7 +5,6 @@ import Tab from "@/shared/components/ui/Tab";
 import { Suspense, useState } from "react";
 import TrendingTopics from "@/shared/components/common/TrendingTopics";
 import BestContributers from "@/shared/components/common/BestContributers";
-import { useTrendingTopics } from "../services/trendingTopics/queries";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorCard from "@/shared/components/ui/ErrorCard";
@@ -178,7 +177,7 @@ function Home() {
             <ErrorBoundary fallback={<ErrorCard />}>
               <Suspense
                 fallback={
-                  <Skeleton lines={5} className="w-full h-11 space-y-4" />
+                  <Skeleton lines={5} className="w-full h-11 space-y-8" />
                 }
               >
                 <TrendingTopics />
@@ -194,35 +193,15 @@ function Home() {
             برترین مشارکت‌کنندگان
           </h3>
           <div className="space-y-3">
-            {[
-              {
-                name: "علی رضایی",
-                username: "ali_rezaei",
-                reputation: 8932,
-                avatar: "AR",
-              },
-              {
-                name: "فاطمه حسینی",
-                username: "fateme_hosseini",
-                reputation: 5421,
-                avatar: "FH",
-              },
-              {
-                name: "سارا محمدی",
-                username: "sara_mohammadi",
-                reputation: 3245,
-                avatar: "SM",
-              },
-            ].map((user, index) => (
-              <BestContributers
-                key={user.username}
-                username={user.username}
-                avatar={user.avatar}
-                name={user.name}
-                reputation={user.reputation}
-                index={index}
-              />
-            ))}
+            <ErrorBoundary fallback={<ErrorCard />}>
+              <Suspense
+                fallback={
+                  <Skeleton lines={3} className="w-full h-11 space-y-8 bg-white" />
+                }
+              >
+                <BestContributers />
+              </Suspense>
+            </ErrorBoundary>
           </div>
         </div>
 
