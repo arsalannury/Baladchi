@@ -1,12 +1,14 @@
 import { Link } from "react-router";
 import { TrendingUp, Award, MessageSquare } from "lucide-react";
-import PostCard from "../shared/components/ui/PostCard";
-import Tab from "../shared/components/common/Tab";
-import { useState } from "react";
-import TrendingTopics from "../shared/components/ui/TrendingTopics";
-import BestContributers from "../shared/components/ui/BestContributers";
-import { useTrendingTopics } from "../services/analysis/queries";
+import PostCard from "@/shared/components/common/PostCard";
+import Tab from "@/shared/components/ui/Tab";
+import { Suspense, useState } from "react";
+import TrendingTopics from "@/shared/components/common/TrendingTopics";
+import BestContributers from "@/shared/components/common/BestContributers";
+import { useTrendingTopics } from "../services/trendingTopics/queries";
 import { Skeleton } from "@/shared/components/ui/skeleton";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorCard from "@/shared/components/ui/ErrorCard";
 
 interface Question {
   id: string;
@@ -126,7 +128,6 @@ function Home() {
   const [activeTab, setActiveTab] = useState<"trending" | "recent" | "top">(
     "trending",
   );
-  const { data, error, isLoading } = useTrendingTopics();
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -174,19 +175,15 @@ function Home() {
             موضوعات پرطرفدار
           </h3>
           <div className="space-y-3">
-            {isLoading ? (
-              <Skeleton lines={5} className="w-full h-11 space-y-4"/>
-            ) : (
-              data?.map((topic, index: number) => (
-                <TrendingTopics
-                  key={topic.name}
-                  color={topic.color}
-                  name={topic.name}
-                  count={topic.count}
-                  index={index}
-                />
-              ))
-            )}
+            <ErrorBoundary fallback={<ErrorCard />}>
+              <Suspense
+                fallback={
+                  <Skeleton lines={5} className="w-full h-11 space-y-4" />
+                }
+              >
+                <TrendingTopics />
+              </Suspense>
+            </ErrorBoundary>
           </div>
         </div>
 
