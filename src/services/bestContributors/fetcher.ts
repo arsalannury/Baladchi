@@ -11,7 +11,7 @@ interface IResponse {
 
 export const getBestContributors = async () => {
   try {
-    const getData = await Api.get<IResponse[]>(Endpoints.GET_EST_CONTIBUTORS);
+    const getData = await Api.get<IResponse[]>(Endpoints.GET_BEST_CONTIBUTORS);
     
     return getData.data;
   } catch (error) {
