@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { TrendingUp, Award, MessageSquare } from "lucide-react";
-import PostCard from "@/shared/components/common/PostCard";
 import Tab from "@/shared/components/ui/Tab";
 import { Suspense, useState } from "react";
 import TrendingTopics from "@/shared/components/common/TrendingTopics";
@@ -8,6 +7,7 @@ import BestContributers from "@/shared/components/common/BestContributers";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorCard from "@/shared/components/ui/ErrorCard";
+import PostCardContainer from "@/shared/components/common/PostCardContainer";
 
 function Home() {
   const [activeTab, setActiveTab] = useState<"trending" | "recent" | "top">(
@@ -44,9 +44,15 @@ function Home() {
 
         {/* Questions Feed */}
         <div className="space-y-4">
-          {mockQuestions.map((question) => (
-            <PostCard key={question.id} question={question} />
-          ))}
+          <ErrorBoundary fallback={<ErrorCard />}>
+            <Suspense
+              fallback={
+                <Skeleton lines={5} className="w-full h-40 space-y-8" />
+              }
+            >
+              <PostCardContainer />
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </div>
 
@@ -82,7 +88,10 @@ function Home() {
             <ErrorBoundary fallback={<ErrorCard />}>
               <Suspense
                 fallback={
-                  <Skeleton lines={3} className="w-full h-11 space-y-8 bg-white" />
+                  <Skeleton
+                    lines={3}
+                    className="w-full h-11 space-y-8 bg-white"
+                  />
                 }
               >
                 <BestContributers />
