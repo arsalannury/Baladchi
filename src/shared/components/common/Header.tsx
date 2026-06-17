@@ -47,7 +47,7 @@ const Header: React.FC = () => {
             {/* Desktop Navigation Section */}
             <nav className="hidden md:flex items-center gap-6">
               <Link
-                to="/"
+                to="/topics"
                 className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
                   location.pathname.startsWith("/")
                     ? "text-purple-600 bg-purple-50"
