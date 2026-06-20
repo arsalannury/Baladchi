@@ -5,6 +5,7 @@ import { Api } from "../../api/axios";
 interface IResponseTopics {
   name: string;
   count: number;
+  id: number;
 }
 
 export const getAllTopics = async () => {
