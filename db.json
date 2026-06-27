@@ -143,31 +143,81 @@
       "name": "هوش مصنوعی",
       "count": 1234,
       "id": 1,
-      "Followers": 12542,
-      "questionsCount": 2341,
-      "activityStatistics": {
-        // must be from users
-      }
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "کلاود",
+        "پایتون",
+        "شبکه های عصبی",
+        "هوش مصنوعی",
+        "دیپ سیک"
+      ],
+      "slug": "ai",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "برنامه‌نویسی",
       "count": 2341,
-      "id": 2
+      "id": 2,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "جاوااسکریپت",
+        "پایتون",
+        "React",
+        "Node.js",
+        "توسعه وب"
+      ],
+      "slug": "programming",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "استارتاپ",
       "count": 876,
-      "id": 3
+      "id": 3,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "سلامتی",
+        "مالی و بازاریابی",
+        "کسب و کار",
+        "Node.js",
+        "توسعه وب"
+      ],
+      "slug": "startup",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "زندگی",
       "count": 1234,
-      "id": 4
+      "id": 4,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "جاوااسکریپت",
+        "پایتون",
+        "React",
+        "Node.js",
+        "توسعه وب"
+      ],
+      "slug": "life",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "علم",
       "count": 654,
-      "id": 5
+      "id": 5,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "جاوااسکریپت",
+        "پایتون",
+        "React",
+        "Node.js",
+        "توسعه وب"
+      ],
+      "slug": "sience",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "روانشناسی",
@@ -177,17 +227,50 @@
     {
       "name": "تاریخ",
       "count": 3000,
-      "id": 7
+      "id": 7,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "جاوااسکریپت",
+        "پایتون",
+        "React",
+        "Node.js",
+        "توسعه وب"
+      ],
+      "slug": "history",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "فرهنگی",
       "count": 300,
-      "id": 8
+      "id": 8,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "جاوااسکریپت",
+        "پایتون",
+        "React",
+        "Node.js",
+        "توسعه وب"
+      ],
+      "slug": "cultural",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "مذهبی",
       "count": 450,
-      "id": 9
+      "id": 9,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "جاوااسکریپت",
+        "پایتون",
+        "React",
+        "Node.js",
+        "توسعه وب"
+      ],
+      "slug": "religional",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     }
   ],
   "topExperts": [

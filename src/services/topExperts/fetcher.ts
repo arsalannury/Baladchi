@@ -4,18 +4,12 @@ import { Api } from "../../api/axios";
 
 interface IResponseTopic {
   name: string;
-  count: number;
-  id: number;
-  followers: number;
-  questions: number;
-  relatedTopics: string[];
-  slug: string;
-  description: string;
+  score: number;
 }
 
 export const getSingleTopic = async (id: string | undefined) => {
   try {
-    const getData = await Api.get<IResponseTopic>(
+    const getData = await Api.get<IResponseTopic[]>(
       `${Endpoints.GET_ALL_TOPICS}/${id}`,
     );
 

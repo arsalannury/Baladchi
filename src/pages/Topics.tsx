@@ -17,6 +17,7 @@ const Topics = () => {
       ) : (
         data?.map((topic, index) => (
           <motion.div
+            key={topic.id}
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             className="flex flex-col py-2 px-5 rounded-lg
@@ -43,17 +44,16 @@ const Topics = () => {
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
               </p>
-
-              <div className="flex items-center justify-end mt-3">
-                <button className="p-1.5 text-slate-400 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">
-                  <Bookmark className="w-4 h-4" />
-                </button>
-
-                <button className="p-1.5 text-slate-400 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">
-                  <Flag className="w-4 h-4" />
-                </button>
-              </div>
             </Link>
+            <div className="flex items-center justify-end mt-3">
+              <button className="p-1.5 text-slate-400 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">
+                <Bookmark className="w-4 h-4" />
+              </button>
+
+              <button className="p-1.5 text-slate-400 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">
+                <Flag className="w-4 h-4" />
+              </button>
+            </div>
           </motion.div>
         ))
       )}
