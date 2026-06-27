@@ -35,7 +35,7 @@ const Topics = () => {
                 </div>
 
                 <span className="text-xs text-slate-500">
-                  {topic.count.toLocaleString("fa-IR")} سوال
+                  {topic.count?.toLocaleString("fa-IR")} سوال
                 </span>
               </div>
 
