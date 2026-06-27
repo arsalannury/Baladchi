@@ -222,7 +222,18 @@
     {
       "name": "روانشناسی",
       "count": 890,
-      "id": 6
+      "id": 6,
+      "followers": 12543,
+      "questions": 2341,
+      "relatedTopics": [
+        "سایکوپاتی",
+        "شیزوفرنی",
+        "خانواده",
+        "سلامت و روان",
+        "توسعه جامعه"
+      ],
+      "slug": "ss",
+      "description": "لورم ایپسوم هستم و حالم هم خوبه"
     },
     {
       "name": "تاریخ",
@@ -274,8 +285,23 @@
     }
   ],
   "topExperts": [
-    { "name": "علی رضایی", "score": 8932 },
-    { "name": "فاطمه حسینی", "score": 5421 },
-    { "name": "سارا محمدی", "score": 3245 }
+    {
+      "name": "علی رضایی",
+      "username": "ali_rezaei",
+      "avatar": "AR",
+      "reputation": 8932
+    },
+    {
+      "name": "فاطمه حسینی",
+      "username": "fateme_hosseini",
+      "avatar": "FH",
+      "reputation": 5421
+    },
+    {
+      "name": "سارا محمدی",
+      "username": "sara_mohammadi",
+      "avatar": "SM",
+      "reputation": 3245
+    }
   ]
 }
