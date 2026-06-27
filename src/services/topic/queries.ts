@@ -3,9 +3,8 @@ import { getSingleTopic } from "./fetcher";
 
 export const useSingleTopic = (id: string | undefined) =>
   useQuery({
-    queryKey: ["get_all_topics"],
+    queryKey: ["get_signle_topic"],
     queryFn: () => getSingleTopic(id),
     retry: true,
-    staleTime: 10000,
-    refetchOnWindowFocus: false,
+ 
   });

@@ -31,7 +31,7 @@ interface Question {
   trending?: boolean;
 }
 
-const PostCard = ({ question }: { question: Question }) => {
+const QuestionCard = ({ question }: { question: Question }) => {
   const [votes, setVotes] = useState(question.votes);
   const [userVote, setUserVote] = useState<"up" | "down" | null>(null);
 
@@ -168,7 +168,6 @@ const PostCard = ({ question }: { question: Question }) => {
       </div>
     </div>
   );
-}
+};
 
-
-export default PostCard;
+export default QuestionCard;
