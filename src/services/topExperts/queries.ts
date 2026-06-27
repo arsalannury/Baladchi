@@ -1,11 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { getSingleTopic } from "./fetcher";
+import { getTopExperts } from "./fetcher";
 
-export const useSingleTopic = (id: string | undefined) =>
+export const useTopExperts = () =>
   useQuery({
-    queryKey: ["get_all_topics"],
-    queryFn: () => getSingleTopic(id),
+    queryKey: ["get_top_experts"],
+    queryFn:  getTopExperts,
     retry: true,
-    staleTime: 10000,
-    refetchOnWindowFocus: false,
   });
