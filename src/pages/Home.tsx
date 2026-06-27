@@ -7,7 +7,8 @@ import BestContributers from "@/shared/components/common/BestContributers";
 import { Skeleton } from "@/shared/components/ui/skeleton";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorCard from "@/shared/components/ui/ErrorCard";
-import PostCardContainer from "@/shared/components/common/PostCardContainer";
+import QuestionCardContainer from "@/shared/components/common/QuestionCardContainer";
+import CtaCard from "@/shared/components/common/CtaCard";
 
 function Home() {
   const [activeTab, setActiveTab] = useState<"trending" | "recent" | "top">(
@@ -50,7 +51,7 @@ function Home() {
                 <Skeleton lines={5} className="w-full h-40 space-y-8" />
               }
             >
-              <PostCardContainer />
+              <QuestionCardContainer />
             </Suspense>
           </ErrorBoundary>
         </div>
@@ -100,19 +101,7 @@ function Home() {
           </div>
         </div>
 
-        {/* CTA Card */}
-        <div className="bg-linear-to-br from-purple-600 to-blue-600 rounded-xl p-6 text-white">
-          <h3 className="font-bold text-lg mb-2">سوال دارید؟</h3>
-          <p className="text-purple-100 text-sm mb-4">
-            از جامعه دانش‌یار بپرسید و پاسخ‌های کاربردی دریافت کنید.
-          </p>
-          <Link
-            to="/ask"
-            className="block w-full px-4 py-2.5 bg-white text-purple-600 rounded-lg font-medium text-center hover:shadow-lg transition-shadow"
-          >
-            پرسش جدید
-          </Link>
-        </div>
+        <CtaCard />
       </div>
     </div>
   );
