@@ -142,7 +142,12 @@
     {
       "name": "هوش مصنوعی",
       "count": 1234,
-      "id": 1
+      "id": 1,
+      "Followers": 12542,
+      "questionsCount": 2341,
+      "activityStatistics": {
+        // must be from users
+      }
     },
     {
       "name": "برنامه‌نویسی",
@@ -185,5 +190,9 @@
       "id": 9
     }
   ],
-   
+  "topExperts": [
+    { "name": "علی رضایی", "score": 8932 },
+    { "name": "فاطمه حسینی", "score": 5421 },
+    { "name": "سارا محمدی", "score": 3245 }
+  ]
 }

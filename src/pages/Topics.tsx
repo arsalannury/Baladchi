@@ -23,7 +23,7 @@ const Topics = () => {
          hover:bg-slate-50 transition-colors group
          bg-white border border-slate-200 grid-cols-6 sm:grid-cols-12"
           >
-            <Link to={`/topic/${topic.id}`}>
+            <Link to={`/topics/${topic.id}`}>
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="text-sm font-bold text-slate-400">
