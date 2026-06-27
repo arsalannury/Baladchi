@@ -13,13 +13,16 @@ interface IProps {
   icon: ReactNode;
 }
 
-interface ChildrenType {
+interface IContProps {
   children: ReactNode;
+  containerClassName?: string;
 }
 
-const Contaienr = ({ children }: ChildrenType) => {
+const Contaienr = ({ children, containerClassName = "" }: IContProps) => {
   return (
-    <div className="bg-white rounded-xl border border-slate-200 p-1 flex gap-1">
+    <div
+      className={`bg-white rounded-xl border border-slate-200 p-1 flex gap-1 ${containerClassName}`}
+    >
       {children}
     </div>
   );
@@ -29,18 +32,18 @@ const Tab = ({ tabId, onClick, isActive, title, icon }: IProps) => {
   return (
     <>
       {/* Filter Tabs */}
-        <button
-          id={tabId}
-          onClick={onClick}
-          className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-colors ${
-            isActive
-              ? "bg-linear-to-r from-purple-600 to-blue-600 text-white shadow-sm"
-              : "text-slate-600 hover:bg-slate-50"
-          }`}
-        >
-          {icon}
-          <span>{title}</span>
-        </button>
+      <button
+        id={tabId}
+        onClick={onClick}
+        className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-colors ${
+          isActive
+            ? "bg-linear-to-r from-purple-600 to-blue-600 text-white shadow-sm"
+            : "text-slate-600 hover:bg-slate-50"
+        }`}
+      >
+        {icon}
+        <span>{title}</span>
+      </button>
     </>
   );
 };
