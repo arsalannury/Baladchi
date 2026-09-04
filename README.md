@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Baladchi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Baladchi** is a community-driven Q&A platform designed for everyday questions that are best answered through real-world experience rather than formal documentation.
 
-Currently, two official plugins are available:
+The idea behind the platform is simple: people can share their questions, concerns, and experiences across different topics and receive practical answers from others who have faced similar situations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Goals
 
-## React Compiler
+* Build a modern community-based question and answer platform
+* Make it easy for users to ask questions across different everyday topics
+* Encourage experience-based answers and discussions
+* Create a simple and intuitive user experience for browsing, asking, and answering questions
+* Design the frontend with scalability in mind for future backend and authentication integration
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Current Status
 
-## Expanding the ESLint configuration
+🚧 **UI MVP completed — Backend development not started yet**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The current version focuses on building the complete frontend experience and core product flows before moving on to backend implementation.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **React**
+* **Tailwind CSS**
+* Modern JavaScript ecosystem
+* Latest stable versions of the main frontend dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The project is being developed with a focus on modern React patterns, reusable components, and maintainable frontend architecture.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Current Frontend Scope
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Question feed and discovery
+* Question detail views
+* Answer and discussion interfaces
+* Category-based navigation
+* User-oriented interaction flows
+* Responsive UI across different screen sizes
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Planned Development
+
+* [x] UI MVP
+* [ ] Backend architecture
+* [ ] Database design
+* [ ] Authentication
+* [ ] Question and answer APIs
+* [ ] User profiles
+* [ ] Voting / reactions
+* [ ] Search and filtering
+* [ ] Notifications
+* [ ] Moderation tools
+* [ ] Production deployment
+
+## Development Approach
+
+Baladchi is being built incrementally, starting with the frontend and user experience before introducing backend services and persistent data.
+
+The frontend implementation focuses on using modern React capabilities and reusable UI patterns while keeping the codebase ready for future full-stack expansion.
+
+## Author
+
+**Arsalan Noori**
+Frontend Engineer
+
+[LinkedIn](https://www.linkedin.com/in/arsalannuryy)
